@@ -1,0 +1,64 @@
+
+    {% extends 'base.html' %}
+
+    {% block content %}
+
+     <h1 class="text-center mb-4">My Expenses</h1>
+
+    <div class="d-flex justify-content-end mb-2">
+        <a href="{% url 'expense_add' %}" class="btn btn-success">
+            Add Expense
+        </a>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-body text-center">
+            <h3>Total Expenses</h3>
+            <h1>₹{{ total_expense }}</h1>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-striped table-hover">
+
+        <thead class="table-dark">
+            <tr>
+                <th>Title</th>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        {% for expense in expenses %}
+            <tr>
+                <td>{{ expense.title }}</td>
+                <td>₹{{ expense.amount }}</td> 
+                <td>{{ expense.category }}</td>
+                <td>{{ expense.date }}</td>
+                <td>
+                    <a href="{% url 'expense_edit' expense.pk %}" class="btn btn-warning btn-sm">
+                        Edit
+                    </a>
+
+                     <a href="{% url 'expense_delete' expense.pk %}" class="btn btn-danger btn-sm">
+                        Delete
+                    </a>
+
+                </td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+   
+
+    {% endblock %}
+
+  
+
+    
+
