@@ -23,6 +23,24 @@ A web-based Expense Tracker application built using Django that helps users effi
 - expenses/ – Expense management application
 - manage.py – Django management script
 
+## 📸 Screenshots
+
+### Home Page
+
+![home-page](screenshots/home-page.png)
+
+### Add Expense
+
+![add-expenses](screenshots/add-expenses.png)
+
+### Edit Expense
+
+![edit-page](screenshots/edit-page.png)
+
+### Delete Confirmation
+
+![delete-page](screenshots/delete-page.png)
+
 ## Author
 **Keerthana Narayanan**
 
